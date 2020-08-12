@@ -1,0 +1,41 @@
+-- Question 1 -- 
+db.movies.find({
+    'countries': 'USA'
+},{
+    'title':1,
+    'countries':1
+}).pretty()
+
+
+--Question 2--
+db.movies.find({
+    'awards.wins': {
+        '$gt':3
+    }
+},
+{
+    'title':1,
+    'award':1
+})
+
+--Question 3--
+db.movies.find({
+    'cast': {
+        '$all':['Tom Cruise']
+    }
+},
+{
+    'title':1,
+    'cast':'$all'
+})
+
+
+--Question 4 --
+db.movies.find({
+    'title':{
+        '$regex': "Ring", '$options':'i'
+    }
+},
+{
+    'title':1
+})

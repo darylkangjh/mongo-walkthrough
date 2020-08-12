@@ -39,3 +39,44 @@ db.movies.find({
 {
     'title':1
 })
+
+
+Sample Training 
+
+--Question 1---
+db.companies.find({
+    'founded_year':{
+        '$gte':2005
+    }
+},{
+    'name':1
+})
+
+----Question 2----
+db.companies.find({
+    'number_of_employees':{
+        '$gte': 50,
+        '$lte': 100
+    }
+},{
+    'name':1
+})
+
+
+----Question 3----
+db.companies.find({
+    'funding_rounds.round_code': 'c'
+    
+},{
+    'name':1
+})
+
+
+-----Question 4----
+db.companies.find({
+    'funding_rounds' : {
+        '$gt':2
+    }
+},{
+    'name':1
+})

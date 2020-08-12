@@ -74,9 +74,25 @@ db.companies.find({
 
 -----Question 4----
 db.companies.find({
-    'funding_rounds' : {
-        '$gt':2
+    'funding_rounds.2' : {
+        '$exists':true
     }
 },{
     'name':1
 })
+
+-----Question 5----
+db.companies.find({
+    'tag_list':{
+        '$regex': "", '$options':'i'
+    }
+},
+{
+    'name':1
+})
+
+
+
+Sample_Supplies
+
+----Question 1----
